@@ -1,4 +1,5 @@
-Games/res/drawable/2222
-Games/res/icon/3333
-Games/res/vector/4444
-Games/res/savegames/1111
+Games/
+*res/drawable/2222.docx
+*res/icon/3333.docx
+*res/vector/4444.docx
+*savegames/1111.docx
