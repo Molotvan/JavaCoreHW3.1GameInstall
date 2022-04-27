@@ -1,7 +1,4 @@
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -22,8 +19,12 @@ public class Main<entry> {
         openZip(GameProgress.savingDirectory + "//packed_GameProgress.zip", GameProgress.savingDirectory + "//unpacked//");
 
         for (GameProgress save : GameProgress.GPList) {
+            File file = new File(GameProgress.savingDirectory + "//" + save.getId());
+            if (file.delete()) {
+                System.out.println("Исходный Файл " + save.getId() + " удалён");
+            }
 
-            System.out.println(openProgress(GameProgress.savingDirectory + "//unpacked//" + save.getId()));
+            System.out.println("распакованный файл " + openProgress(GameProgress.savingDirectory + "//unpacked//" + save.getId()));
         }
     }
 
@@ -88,6 +89,5 @@ public class Main<entry> {
             System.out.println(ex.getMessage());
         }
     }
-
 
 }
